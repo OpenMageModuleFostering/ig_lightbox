@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<layout version="0.1.0">
+	
+	<catalog_product_view>
+		<reference name="head">
+			<action method="addItem" ifconfig="ig-lightbox/general/enabled"><type>skin_css</type><name>css/ig-lightbox.css</name></action>
+			<action method="addItem" ifconfig="ig-lightbox/general/enabled"><type>skin_js</type><name>js/ig-effects.js</name></action>
+			<action method="addItem" ifconfig="ig-lightbox/general/enabled"><type>skin_js</type><name>js/ig-lightbox.js</name></action>
+		</reference>
+		<reference name="product.info.media">
+			<action method="setTemplate" ifconfig="ig-lightbox/general/enabled"><template>ig-lightbox/media.phtml</template></action>
+		</reference>
+	</catalog_product_view>
+
+</layout>

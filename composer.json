@@ -1,0 +1,16 @@
+{
+    "name": "OpenMageModuleFostering/IG_LightBox",
+    "type": "magento-module",
+    "license": "GNU-GPL",
+    "homepage": "",
+    "description": "IDEALIAGroup LightBox for Magento",
+    "authors": [
+    {
+        "name": "Riccardo Tempesta",
+        "email": "tempesta@idealiagroup.com"
+    }
+],
+    "suggest": {
+        "magento-hackathon/magento-composer-installer": "*"
+    }
+}

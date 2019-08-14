@@ -1,0 +1,87 @@
+<config>
+	<modules>
+		<IG_LightBox>
+			<version>1.0.0</version>
+		</IG_LightBox>
+	</modules>
+
+	<global>
+		<helpers>
+			<ig-lightbox>
+				<class>IG_LightBox_Helper</class>
+			</ig-lightbox>
+        </helpers>
+		<resources>
+			<lightbox_setup>
+				<setup>
+					<module>IG_LightBox</module>
+				</setup>
+				<connection>
+					<use>core_setup</use>
+				</connection>
+			</lightbox_setup>
+			<lightbox_write>
+				<connection>
+					<use>core_write</use>
+				</connection>
+			</lightbox_write>
+			<lightbox_read>
+				<connection>
+					<use>core_read</use>
+				</connection>
+			</lightbox_read>
+        </resources>
+	</global>
+	
+	<frontend>
+		<routers>
+			<ig-lightbox>
+				<use>standard</use>
+				<args>
+					<module>IG_LightBox</module>
+					<frontname>ig-lightbox</frontname>
+				</args>
+			</ig-lightbox>
+		</routers>
+
+		<layout>
+			<updates>
+				<ig-lightbox module="IG_LightBox">
+					<file>ig-lightbox.xml</file>
+				</ig-lightbox>
+			</updates>
+		</layout>
+	</frontend>
+
+	<adminhtml>
+		<translate>
+			<modules>
+				<ig-lightbox>
+					<files>
+						<default>IG_LightBox.csv</default>
+					</files>
+				</ig-lightbox>
+			</modules>
+        </translate>
+		<acl>
+			<resources>
+				<admin>
+					<children>
+						<system>
+							<children>
+								<config>
+									<children>
+										<ig-lightbox translate="title" module="ig-lightbox">
+											<title>IG LightBox</title>
+											<sort_order>50</sort_order>
+										</ig-lightbox>
+									</children>
+								</config>
+							</children>
+						</system>
+					</children>
+				</admin>
+			</resources>
+		</acl>
+    </adminhtml>
+</config>
