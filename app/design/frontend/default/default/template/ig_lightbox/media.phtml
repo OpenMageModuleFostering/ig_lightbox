@@ -100,12 +100,15 @@
 ?>
 </a>
 
-<?php if (count($this->getGalleryImages()) > 0): ?>
+<?php
+	$js_load=array();
+	if (count($this->getGalleryImages()) > 0)
+	{
+?>
 <div class="more-views">
     <h4><?php echo $this->__('More Views') ?></h4>
     <ul>
     <?php
-    	$js_load=array();
     	foreach ($this->getGalleryImages() as $_image)
     	{
     		$src=$this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->constrainOnly(true)->keepFrame(false)->resize($_ig_lightbox_big_width, $_ig_lightbox_big_height);
@@ -125,7 +128,7 @@
     ?>
     </ul>
 </div>
-<?php endif; ?>
+<?php } ?>
 
 <script type="text/javascript">
 	Event.observe(window, 'load', function() {

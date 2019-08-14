@@ -75,12 +75,14 @@ function ig_lightbox_hide()
 		width			: '10px'
 	});
 	
- 	document.body.style.overflow="auto";
+ 	document.body.style.overflowX="auto";
 }
 
 function ig_lightbox_show(n)
 {
- 	document.body.style.overflow="hidden";
+	if (!ig_lightbox_img_sequence.length) return;
+	
+ 	document.body.style.overflowX="hidden";
 	
 // 	if (typeof(window.innerHeight) == "undefined")
 // 	{
