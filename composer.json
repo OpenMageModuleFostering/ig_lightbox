@@ -1,7 +1,7 @@
 {
     "name": "OpenMageModuleFostering/IG_LightBox",
     "type": "magento-module",
-    "license": "GNU-GPL",
+    "license": "OSL",
     "homepage": "",
     "description": "IDEALIAGroup LightBox for Magento",
     "authors": [
