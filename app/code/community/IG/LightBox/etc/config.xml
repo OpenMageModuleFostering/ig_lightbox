@@ -1,7 +1,7 @@
 <config>
 	<modules>
 		<IG_LightBox>
-			<version>1.0.7</version>
+			<version>1.0.8</version>
 		</IG_LightBox>
 	</modules>
 
@@ -11,6 +11,16 @@
 				<class>IG_LightBox_Helper</class>
 			</ig_lightbox>
         </helpers>
+		<blocks>
+			<ig_lightbox>
+				<class>IG_LightBox_Block</class>
+			</ig_lightbox>
+			<catalog>
+				<rewrite>
+					<product_view_media>IG_LightBox_Block_Media</product_view_media>
+				</rewrite>
+			</catalog>
+		</blocks>
 		<resources>
 			<ig_lightbox_setup>  
 				<setup>  
@@ -88,9 +98,10 @@
     </adminhtml>
 		
 	<default>
-		<ig_productform>
+		<ig_lightbox>
 			<general>
 				<enabled>1</enabled>
+				<wrapImages>1</wrapImages>
 				<bigImageSize>800x600</bigImageSize>
 				<mainImageSize>265x265</mainImageSize>
 				<thumbnailImageSize>60x60</thumbnailImageSize>
@@ -117,6 +128,6 @@
 				<imageResize>0.5</imageResize>
 				<imageSwap>0.5</imageSwap>
 			</effects>
-		</ig_productform>
+		</ig_lightbox>
 	</default>
 </config>

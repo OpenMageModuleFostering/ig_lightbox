@@ -1,4 +1,5 @@
 "Enable LightBox","Abilita LightBox"
+"Wrap images","Wrap images"
 "Maximum size of big image","Dimensione massima immagine grande"
 "Maximum size of base image","Dimensione massima immagine base"
 "Maximum size of thumbnails","Dimensione massima dei thumbnail"
@@ -30,3 +31,4 @@
 "Size in pixels (e.g.: 1)","Dimensione in pixel (es.: 1)"
 "Font name (e.g.: Verdana)","Nome font (es.: Verdana)"
 "Value in seconds (e.g.: 1.5)","Valore in secondi (es.: 1.5)"
+"Photo %d of %d","Foto %d di %d"

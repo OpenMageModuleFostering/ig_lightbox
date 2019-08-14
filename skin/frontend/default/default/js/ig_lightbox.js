@@ -1,4 +1,6 @@
 /* BEGIN: Configurable parameters */
+var ig_lightbox_wrap_images				= 1;
+var ig_lightbox_main_img				= 0;
 var ig_lightbox_img_border				= 10;
 var ig_lightbox_cmd_box_height			= 32;
 var ig_lightbox_initial_width			= 100;
@@ -82,6 +84,8 @@ function ig_lightbox_show(n)
 {
 	if (!ig_lightbox_img_sequence.length) return;
 	
+	if (n<0) n=ig_lightbox_main_img;
+	
  	document.body.style.overflowX="hidden";
 	
 // 	if (typeof(window.innerHeight) == "undefined")
@@ -111,6 +115,16 @@ function ig_lightbox_show(n)
 		var img_width		= img_loader.width;
 
 		ig_lightbox_cur_image_n	= n;
+		
+		if (!ig_lightbox_wrap_images) 
+		{
+			$('ig-lightbox-next').setStyle({
+				'display': ((ig_lightbox_cur_image_n == ig_lightbox_img_sequence.length - 1) ? 'none' : 'block')
+			})
+			$('ig-lightbox-prev').setStyle({
+				'display': ((ig_lightbox_cur_image_n == 0) ? 'none' : 'block')
+			})
+		}
 
 		if (ig_lightbox_win_is_open)
 		{

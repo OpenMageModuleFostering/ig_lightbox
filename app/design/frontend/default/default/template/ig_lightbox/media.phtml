@@ -1,76 +1,4 @@
-<?php
-	$_ig_lightbox_config_general = Mage::getStoreConfig('ig_lightbox/general');
-	$_ig_lightbox_config_display = Mage::getStoreConfig('ig_lightbox/display');
-	$_ig_lightbox_config_effects = Mage::getStoreConfig('ig_lightbox/effects');
-
-	/* Read configuration */
-	list($_ig_lightbox_main_width, $_ig_lightbox_main_height)	= split('x', $_ig_lightbox_config_general['mainImageSize']);
-	list($_ig_lightbox_thu_width, $_ig_lightbox_thu_height)		= split('x', $_ig_lightbox_config_general['thumbnailImageSize']);
-	list($_ig_lightbox_big_width, $_ig_lightbox_big_height)		= split('x', $_ig_lightbox_config_general['bigImageSize']);
-
-	$_ig_lightbox_background_opactiy	= floatval($_ig_lightbox_config_display['backgroundOpacity']);
-	$_ig_lightbox_imagebox_opactiy		= floatval($_ig_lightbox_config_display['imageboxOpacity']);
-	$_ig_lightbox_toolbar_opactiy		= floatval($_ig_lightbox_config_display['toolbarOpacity']);
-	
-	$_ig_lightbox_background_color		= $_ig_lightbox_config_display['backgroundColor'];
-	$_ig_lightbox_imagebox_color		= $_ig_lightbox_config_display['imageboxColor'];
-	$_ig_lightbox_toolbar_color			= $_ig_lightbox_config_display['toolbarColor'];
-	$_ig_lightbox_toolbar_text_color	= $_ig_lightbox_config_display['toolbarTextColor'];
-	$_ig_lightbox_toolbar_text_font		= $_ig_lightbox_config_display['toolbarTextFont'];
-	$_ig_lightbox_toolbar_text_size		= intval($_ig_lightbox_config_display['toolbarTextSize']);
-	
-	$_ig_lightbox_border_color		= $_ig_lightbox_config_display['borderColor'];
-	$_ig_lightbox_border_size		= intval($_ig_lightbox_config_display['borderSize']);
-
-	$_ig_padding_size				= intval($_ig_lightbox_config_display['paddingSize']);
-	
-	$_ig_lightbox_fade_in_duration			= floatval($_ig_lightbox_config_effects['fadeIn']);
-	$_ig_lightbox_fade_out_duration			= floatval($_ig_lightbox_config_effects['fadeOut']);
-	$_ig_lightbox_image_swap_duration		= floatval($_ig_lightbox_config_effects['imageSwap']);
-	$_ig_lightbox_image_resize_duration		= floatval($_ig_lightbox_config_effects['imageResize']);
-
-	/* Default values and ranges */
-	$_ig_lightbox_main_width	= intval($_ig_lightbox_main_width)	> 0	? intval($_ig_lightbox_main_width)	: 800;
-	$_ig_lightbox_main_height	= intval($_ig_lightbox_main_height)	> 0 ? intval($_ig_lightbox_main_height)	: 600;
-	$_ig_lightbox_thu_width		= intval($_ig_lightbox_thu_width)	> 0	? intval($_ig_lightbox_thu_width)	: 256;
-	$_ig_lightbox_thu_height	= intval($_ig_lightbox_thu_height)	> 0	? intval($_ig_lightbox_thu_height)	: 256;
-	$_ig_lightbox_big_width		= intval($_ig_lightbox_big_width) 	> 0	? intval($_ig_lightbox_big_width)	: 60;
-	$_ig_lightbox_big_height	= intval($_ig_lightbox_big_height) 	> 0	? intval($_ig_lightbox_big_height)	: 60;
-	
-	$_ig_lightbox_background_color		= $_ig_lightbox_background_color	? $_ig_lightbox_background_color	: '#000000';
-	$_ig_lightbox_imagebox_color		= $_ig_lightbox_imagebox_color		? $_ig_lightbox_imagebox_color		: '#000000';
-	$_ig_lightbox_toolbar_color			= $_ig_lightbox_toolbar_color		? $_ig_lightbox_toolbar_color		: '#000000';
-	$_ig_lightbox_toolbar_text_color	= $_ig_lightbox_toolbar_text_color	? $_ig_lightbox_toolbar_text_color	: '#000000';
-	$_ig_lightbox_toolbar_text_font		= $_ig_lightbox_toolbar_text_font	? $_ig_lightbox_toolbar_text_font	: 'Verdana';
-	$_ig_lightbox_border_color			= $_ig_lightbox_border_color		? $_ig_lightbox_border_color		: '#000000';
-	
-	$_ig_lightbox_toolbar_text_size		= intval($_ig_lightbox_toolbar_text_size) 	> 0		? intval($_ig_lightbox_toolbar_text_size)	: 10;
-	$_ig_lightbox_border_size			= intval($_ig_lightbox_border_size) 		>= 0	? intval($_ig_lightbox_border_size)	: 0;
-	
-	$_ig_lightbox_background_opactiy	= min(1.0, max(0.0, $_ig_lightbox_background_opactiy));
-	$_ig_lightbox_imagebox_opactiy		= min(1.0, max(0.0, $_ig_lightbox_imagebox_opactiy));
-	$_ig_lightbox_toolbar_opactiy		= min(1.0, max(0.0, $_ig_lightbox_toolbar_opactiy));
-?>
-
-<script type="text/javascript">
-	ig_lightbox_img_border				= <?php echo $_ig_padding_size ?>;
-	ig_lightbox_background_opactiy		= <?php echo $_ig_lightbox_background_opactiy ?>;
-	ig_lightbox_imagebox_opactiy		= <?php echo $_ig_lightbox_imagebox_opactiy ?>;
-	ig_lightbox_toolbar_opactiy			= <?php echo $_ig_lightbox_toolbar_opactiy ?>;
-	ig_lightbox_background_color		= "<?php echo $_ig_lightbox_background_color ?>";
-	ig_lightbox_imagebox_color			= "<?php echo $_ig_lightbox_imagebox_color ?>";
-	ig_lightbox_toolbar_color			= "<?php echo $_ig_lightbox_toolbar_color ?>";
-	ig_lightbox_toolbar_text_color		= "<?php echo $_ig_lightbox_toolbar_text_color ?>";
-	ig_lightbox_toolbar_text_font		= "<?php echo $_ig_lightbox_toolbar_text_font ?>";
-	ig_lightbox_toolbar_text_size		= <?php echo $_ig_lightbox_toolbar_text_size ?>;
-	ig_lightbox_border_size				= <?php echo $_ig_lightbox_border_size ?>;
-	ig_lightbox_border_color			= "<?php echo $_ig_lightbox_border_color ?>";
-	
-	ig_lightbox_fade_in_duration		= <?php echo $_ig_lightbox_fade_in_duration ?>;
-	ig_lightbox_fade_out_duration		= <?php echo $_ig_lightbox_fade_out_duration ?>;
-	ig_lightbox_image_swap_duration		= <?php echo $_ig_lightbox_image_swap_duration ?>;
-	ig_lightbox_image_resize_duration	= <?php echo $_ig_lightbox_image_resize_duration ?>;
-</script>
+<?php echo $this->getIgLightBoxJsConfig() ?>
 
 <div id="ig-lightbox-back"></div>
 <div id="ig-lightbox-image"></div>
@@ -78,9 +6,9 @@
 <table id="ig-lightbox-image-commands">
 	<tbody>
 		<tr>
-			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_prev()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/prev.png') ?>" alt="prev" /></a></td>
+			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_prev()"><img id="ig-lightbox-prev" src="<?php echo $this->getSkinUrl('images/ig_lightbox/prev.png') ?>" alt="prev" /></a></td>
 			<td id="ig-lightbox-image-commands-label-td"><div id="image-label"></div></td>
-			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_next()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/next.png') ?>" alt="next" /></a></td>
+			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_next()"><img id="ig-lightbox-next" src="<?php echo $this->getSkinUrl('images/ig_lightbox/next.png') ?>" alt="next" /></a></td>
 		</tr>
 	</tbody>
 </table>
@@ -93,42 +21,66 @@
     $_helper = $this->helper('catalog/output');
 ?>
 
-<a href="#" onclick="ig_lightbox_show(0)">
+<a href="#" onclick="ig_lightbox_show(-1)">
 <?php
-	$_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->keepFrame(false)->resize($_ig_lightbox_main_width, $_ig_lightbox_main_height).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
+	list($width, $height)=$this->getIgLightBoxMainImageSize();
+	$_img = '<img id="image" src="'.$this->helper('catalog/image')->init($_product, 'image')->keepFrame(false)->resize($width, $height).'" alt="'.$this->htmlEscape($this->getImageLabel()).'" title="'.$this->htmlEscape($this->getImageLabel()).'" />';
 	echo $_helper->productAttribute($_product, $_img, 'image')
 ?>
 </a>
 
 <?php
 	$js_load=array();
-	if (count($this->getGalleryImages()) > 0)
+	if (count($this->getGalleryImages()) > 1)
 	{
 ?>
 <div class="more-views">
     <h4><?php echo $this->__('More Views') ?></h4>
     <ul>
     <?php
+		$c=0;
     	foreach ($this->getGalleryImages() as $_image)
     	{
-    		$src=$this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->constrainOnly(true)->keepFrame(false)->resize($_ig_lightbox_big_width, $_ig_lightbox_big_height);
-    		$lbl=$this->htmlEscape($_image->getLabel());
+    		list($width, $height)=$this->getIgLightBoxBigImageSize();
+    		$src=$this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->constrainOnly(true)->keepFrame(false)->resize($width, $height);
+			
+			if ($_image->getFile() == $_product->getImage())
+			{
+				array_push($js_load, "ig_lightbox_main_img=$c;");
+			}
+		
+			$lbl=$this->__("Photo %d of %d", $c+1, sizeof($this->getGalleryImages()));
+			
+			if ($_image->getLabel())
+				$lbl.=' - '.$this->htmlEscape($_image->getLabel());
+				
+			str_replace("'", "\\'", $lbl);
     		
     		array_push($js_load, "ig_lightbox_img_sequence.push('$src');");
 			array_push($js_load, "ig_lightbox_img_labels.push('$lbl');");
+			
+			list($width, $height)=$this->getIgLightBoxThumbnailImageSize();
     ?>
         <li>
         	<a href="#" onclick="ig_lightbox_show('<?php echo $_ig_lightbox_images_count; ?>')">
-        		<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->keepFrame(true)->resize($_ig_lightbox_thu_width, $_ig_lightbox_thu_height); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
+        		<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->keepFrame(true)->resize($width, $height); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
         	</a>
         </li>
     <?php
     		$_ig_lightbox_images_count++;
+			$c++;
     	}
     ?>
     </ul>
 </div>
-<?php } ?>
+<?php
+	}
+	else
+	{
+		array_push($js_load, "ig_lightbox_img_sequence.push('".$_product->getImageUrl()."');");
+		array_push($js_load, "ig_lightbox_img_labels.push('".$_product->getName()."');");
+	}
+?>
 
 <script type="text/javascript">
 	Event.observe(window, 'load', function() {
