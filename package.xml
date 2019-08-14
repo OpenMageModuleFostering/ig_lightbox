@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <package>
     <name>IG_LightBox</name>
-    <version>1.0.0</version>
+    <version>1.0.1</version>
     <stability>stable</stability>
     <license>GNU GPL</license>
     <channel>community</channel>
@@ -19,7 +19,7 @@ IDEALIAGroup LightBox is fully integrated in Magento system configuration.</desc
     <notes>Enjoy it ;)</notes>
     <authors><author><name>Riccardo Tempesta</name><user>auto-converted</user><email>tempesta@idealiagroup.com</email></author></authors>
     <date>2009-08-27</date>
-    <time>12:51:16</time>
+    <time>12:52:01</time>
     <contents><target name="magelocale"><dir name="en_US"><file name="IG_LightBox.csv" hash="1c74b1248e1451699c928473601beb31"/></dir><dir name="it_IT"><file name="IG_LightBox.csv" hash="c749555010a00b805807546736c3db6a"/></dir></target><target name="mageskin"><dir name="frontend"><dir name="default"><dir name="default"><dir name="css"><file name="ig-lightbox.css" hash="57d9a0cc9187bb6aee681a48d3950c36"/></dir><dir name="images"><dir name="ig-lightbox"><file name="close.png" hash="d27820a6f000dc575004e5b2e00152fb"/><file name="next.png" hash="ef678358e90669e00dad3d50137a9dfa"/><file name="prev.png" hash="9c0b22c4237e51b5be3447ee53eca339"/></dir></dir><dir name="js"><file name="ig-effects.js" hash="8433b39a8e7c93a0ed56e467e251f84b"/><file name="ig-lightbox.js" hash="98a04434b4203ff404b2500371439e33"/></dir></dir></dir></dir></target><target name="magedesign"><dir name="frontend"><dir name="default"><dir name="default"><dir name="layout"><file name="ig-lightbox.xml" hash="8c4c0ea072eaaeaa3f7e29e034868626"/></dir><dir name="template"><dir name="ig-lightbox"><file name="media.phtml" hash="ec44e77d78d152a71d9834f6ee51233f"/></dir></dir></dir></dir></dir></target><target name="magecommunity"><dir name="IG"><dir name="LightBox"><dir name="etc"><file name="config.xml" hash="e436e551e6bfd4e22d9fad7966ae3674"/><file name="system.xml" hash="a01b4ae61f45e2b00ffd7b105fd835e6"/></dir><dir name="Helper"><file name="Data.php" hash="8a0b53a32373887f1ac6d9433bba5dd5"/></dir><dir name="sql"><dir name="ig-lightbox_setup"><file name="mysql4-install-1.0.0.php" hash="f7cf810260f5e96cd6fa6ff314bd5330"/></dir></dir></dir></dir></target><target name="mageetc"><dir name="modules"><file name="IG_LightBox.xml" hash="5d8f136255066de4f378d5c9bfe6edaf"/></dir></target></contents>
     <compatible/>
     <dependencies/>
