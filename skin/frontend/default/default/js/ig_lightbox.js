@@ -123,8 +123,8 @@ function ig_lightbox_show(n)
 						style		:
 							'width	: '+img_width+'px;'+
 							'height	: '+img_height+'px;'+
-							'left 	: '+Math.floor((win_width-img_width)/2)+'px;'+
-							'top 	: '+Math.floor((win_height-img_height)/2)+'px',
+							'left 	: '+Math.floor(((win_width-img_width)/2)-2)+'px;'+
+							'top 	: '+Math.floor(((win_height-img_height)/2)-1)+'px',
 						afterFinish	: function (effect) {
 							$('ig-lightbox-image-src').src	= ig_lightbox_img_sequence[ig_lightbox_cur_image_n];
 
