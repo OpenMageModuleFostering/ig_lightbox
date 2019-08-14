@@ -1,7 +1,7 @@
 <?php
-	$_ig_lightbox_config_general = Mage::getStoreConfig('ig-lightbox/general');
-	$_ig_lightbox_config_display = Mage::getStoreConfig('ig-lightbox/display');
-	$_ig_lightbox_config_effects = Mage::getStoreConfig('ig-lightbox/effects');
+	$_ig_lightbox_config_general = Mage::getStoreConfig('ig_lightbox/general');
+	$_ig_lightbox_config_display = Mage::getStoreConfig('ig_lightbox/display');
+	$_ig_lightbox_config_effects = Mage::getStoreConfig('ig_lightbox/effects');
 
 	/* Read configuration */
 	list($_ig_lightbox_main_width, $_ig_lightbox_main_height)	= split('x', $_ig_lightbox_config_general['mainImageSize']);
@@ -78,13 +78,13 @@
 <table id="ig-lightbox-image-commands">
 	<tbody>
 		<tr>
-			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_prev()"><img src="<?php echo $this->getSkinUrl('images/ig-lightbox/prev.png') ?>" alt="prev" /></a></td>
+			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_prev()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/prev.png') ?>" alt="prev" /></a></td>
 			<td><div id="image-label"></div></td>
-			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_next()"><img src="<?php echo $this->getSkinUrl('images/ig-lightbox/next.png') ?>" alt="next" /></a></td>
+			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_next()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/next.png') ?>" alt="next" /></a></td>
 		</tr>
 	</tbody>
 </table>
-<div id="ig-lightbox-image-close"><a href="#" onclick="ig_lightbox_hide()"><img id="ig-lightbox-image-close-img" src="<?php echo $this->getSkinUrl('images/ig-lightbox/close.png') ?>" alt="close" /></a></div>
+<div id="ig-lightbox-image-close"><a href="#" onclick="ig_lightbox_hide()"><img id="ig-lightbox-image-close-img" src="<?php echo $this->getSkinUrl('images/ig_lightbox/close.png') ?>" alt="close" /></a></div>
 
 <?php
 	$_ig_lightbox_images_count = 0;

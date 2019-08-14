@@ -1,14 +1,14 @@
 <?xml version="1.0"?>
 <config>
     <tabs>
-		<ig translate="label" module="ig-lightbox">
+		<ig translate="label" module="ig_lightbox">
             <label>IdealiaGroup</label>
             <sort_order>200</sort_order>
-        </ig>
+		</ig>
     </tabs>
     <sections>
-		<ig-lightbox translate="label" module="ig-lightbox">
-			<label>IG Lightbox</label>
+		<ig_lightbox translate="label" module="ig_lightbox">
+			<label>IG LightBox</label>
 			<tab>ig</tab>
 			<frontend_type>text</frontend_type>
 			<sort_order>10</sort_order>
@@ -236,6 +236,6 @@
 				</display>
 				
 			</groups>
-        </ig-lightbox>
+        </ig_lightbox>
     </sections>
 </config>
