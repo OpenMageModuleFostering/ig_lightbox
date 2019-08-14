@@ -61,17 +61,45 @@ function ig_lightbox_hide()
 		from		: ig_lightbox_background_opactiy,
 		to			: 0.0
 	});
+	
+	$('ig-lightbox-back').setStyle({
+		width			: '10px',
+		height			: '10px'
+	});
 
 	new Effect.Fade('ig-lightbox-image-src', {
 		duration	: ig_lightbox_fade_out_duration
 	});
+	
+	$('ig-lightbox-image-commands-label-td').setStyle({
+		width			: '10px'
+	});
+	
+ 	document.body.style.overflow="auto";
 }
 
 function ig_lightbox_show(n)
 {
-	var win_width	= document.documentElement.clientWidth;
+ 	document.body.style.overflow="hidden";
+	
+// 	if (typeof(window.innerHeight) == "undefined")
+// 	{
+// 		var win_width	= document.documentElement.clientWidth;
+// 		var win_height	= document.documentElement.clientHeight;
+//  		var win_height2	= document.documentElement.offsetHeight;
+// 		vvar win_height2	= document.getElementsByTagName('body')[0].clientHeight
+// 
+// 	}
+// 	else
+// 	{
+// 		var win_width	= window.innerWidth;
+// 		var win_height	= Math.max(window.innerHeight, document.documentElement.offsetHeight);
+// 		var win_height2	= Math.max(window.innerHeight, document.documentElement.offsetHeight);
+// 	}
+	
+	var win_width	= document.getElementsByTagName('body')[0].clientWidth;
 	var win_height	= document.documentElement.clientHeight;
-	var win_height2	= document.documentElement.offsetHeight;
+	var win_height2	= Math.max(document.documentElement.offsetHeight, win_height);
 
 	var img_loader	= new Image();
 
@@ -130,6 +158,10 @@ function ig_lightbox_show(n)
 							left	: Math.floor(img_left+ig_lightbox_img_border+1)+'px',
 							top		: Math.floor(img_top+img_height-ig_lightbox_cmd_box_height+ig_lightbox_img_border)+'px'
 						});
+						
+						$('ig-lightbox-image-commands-label-td').setStyle({
+							width	: '100%'
+						});
 
 						$('ig-lightbox-image-close').setStyle({
 							left	: Math.floor(img_left+img_width+(ig_lightbox_img_border*2)-($('ig-lightbox-image-close-img').width/2))+'px',
@@ -185,7 +217,7 @@ function ig_lightbox_show(n)
 			});
 
 			$('ig-lightbox-image-commands').setStyle({
-				height	: ig_lightbox_cmd_box_height+'px',
+				height	: ig_lightbox_cmd_box_height+'px'
 			});
 
 			new Effect.Opacity('ig-lightbox-back', {
@@ -218,7 +250,7 @@ function ig_lightbox_reset()
 		padding		: ig_lightbox_img_border+'px',
 		width		: ig_lightbox_initial_width+'px',
 		height		: ig_lightbox_initial_height+'px',
-		border		: ig_lightbox_border_size+'px solid '+ig_lightbox_border_color,
+		border		: ig_lightbox_border_size+'px solid '+ig_lightbox_border_color
 	});
 
 	$('ig-lightbox-image').setStyle({
@@ -242,6 +274,18 @@ function ig_lightbox_reset()
 	});
 
 	$('ig-lightbox-image-src').src="";
+	new Effect.Fade('ig-lightbox-image-src', {
+		duration	: 0.1
+	});
+	
+	$('ig-lightbox-back').setStyle({
+		width			: '10px',
+		height			: '10px'
+	});
+	
+	$('ig-lightbox-image-commands-label-td').setStyle({
+		width			: '10px'
+	});
 }
 
 function ig_lightbox_init()

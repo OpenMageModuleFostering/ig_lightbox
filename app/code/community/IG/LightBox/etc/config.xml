@@ -1,7 +1,7 @@
 <config>
 	<modules>
 		<IG_LightBox>
-			<version>1.0.4</version>
+			<version>1.0.5</version>
 		</IG_LightBox>
 	</modules>
 
@@ -86,4 +86,37 @@
 			</resources>
 		</acl>
     </adminhtml>
+		
+	<default>
+		<ig_productform>
+			<general>
+				<enabled>1</enabled>
+				<bigImageSize>800x600</bigImageSize>
+				<mainImageSize>265x265</mainImageSize>
+				<thumbnailImageSize>60x60</thumbnailImageSize>
+			</general>
+			<display>
+				<backgroundOpacity>0.8</backgroundOpacity>
+				<backgroundColor>#000000</backgroundColor>
+				<imageboxOpacity>1.0</imageboxOpacity>
+				<imageboxColor>#000000</imageboxColor>
+				
+				<toolbarOpacity>0.7</toolbarOpacity>
+				<toolbarColor>#000000</toolbarColor>
+				<toolbarTextColor>#ffffff</toolbarTextColor>
+				<toolbarTextSize>12</toolbarTextSize>
+				
+				<toolbarTextFont>Verdana</toolbarTextFont>
+				<paddingSize>10</paddingSize>
+				<borderSize>1</borderSize>
+				<borderColor>#909090</borderColor>
+			</display>
+			<effects>
+				<fadeIn>1.0</fadeIn>
+				<fadeOut>1.0</fadeOut>
+				<imageResize>0.5</imageResize>
+				<imageSwap>0.5</imageSwap>
+			</effects>
+		</ig_productform>
+	</default>
 </config>

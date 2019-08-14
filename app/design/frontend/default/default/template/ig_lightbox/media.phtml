@@ -79,7 +79,7 @@
 	<tbody>
 		<tr>
 			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_prev()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/prev.png') ?>" alt="prev" /></a></td>
-			<td><div id="image-label"></div></td>
+			<td id="ig-lightbox-image-commands-label-td"><div id="image-label"></div></td>
 			<td style="text-align: center" width="64"><a href="#" onclick="ig_lightbox_next()"><img src="<?php echo $this->getSkinUrl('images/ig_lightbox/next.png') ?>" alt="next" /></a></td>
 		</tr>
 	</tbody>
@@ -105,14 +105,16 @@
     <h4><?php echo $this->__('More Views') ?></h4>
     <ul>
     <?php
-    	foreach ($this->getGalleryImages() as $_image) {
+    	$js_load=array();
+    	foreach ($this->getGalleryImages() as $_image)
+    	{
+    		$src=$this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->constrainOnly(true)->keepFrame(false)->resize($_ig_lightbox_big_width, $_ig_lightbox_big_height);
+    		$lbl=$this->htmlEscape($_image->getLabel());
+    		
+    		array_push($js_load, "ig_lightbox_img_sequence.push('$src');");
+			array_push($js_load, "ig_lightbox_img_labels.push('$lbl');");
     ?>
         <li>
-			<script type="text/javascript">
-				ig_lightbox_img_sequence.push('<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->constrainOnly(true)->keepFrame(false)->resize($_ig_lightbox_big_width, $_ig_lightbox_big_height); ?>');
-				ig_lightbox_img_labels.push("<?php echo $this->htmlEscape($_image->getLabel()) ?>");
-			</script>
-
         	<a href="#" onclick="ig_lightbox_show('<?php echo $_ig_lightbox_images_count; ?>')">
         		<img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'image', $_image->getFile())->keepFrame(true)->resize($_ig_lightbox_thu_width, $_ig_lightbox_thu_height); ?>" alt="<?php echo $this->htmlEscape($_image->getLabel()) ?>" title="<?php echo $this->htmlEscape($_image->getLabel()) ?>" />
         	</a>
@@ -124,3 +126,9 @@
     </ul>
 </div>
 <?php endif; ?>
+
+<script type="text/javascript">
+	Event.observe(window, 'load', function() {
+ 		<?php foreach ($js_load as $line) echo "$line\n" ?>
+	});
+</script>
