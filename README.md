@@ -1,3 +1,5 @@
+
+
 ## Original Package Description
 
 IDEALIAGroup LightBox for Magento
